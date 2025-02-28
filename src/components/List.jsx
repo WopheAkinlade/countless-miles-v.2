@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const List = () => {
+const List = ({ listItems, listHeader, noListStyle }) => {
   return (
-    <div>
-      This is the List component
-    </div>
-  )
-}
+    <ul
+      style={{
+        listStyle: noListStyle ? "none" : "initial",
+      }}
+    >
+      {listHeader && <li className="listHeader"> Hello </li>}
+      {listItems.map((listItem, index) => (
+        <li>{listItem}</li>
+      ))}
+    </ul>
+  );
+};
 
-export default List
+export default List;

@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
 
-const Button = () => {
+const Button = ({ transparent, noBorder, label, onClick, buttonStyle }) => {
   return (
-    <div>
-      This is the button component
-    </div>
-  )
-}
+    <button
+      className="button"
+      onClick={onClick}
+      style={{
+        backgroundColor: transparent && "none",
+        border: noBorder && "none",
+        ...buttonStyle
+      }}
+    >
+      {label}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
